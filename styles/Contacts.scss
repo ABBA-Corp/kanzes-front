@@ -1,0 +1,182 @@
+$text: #1C2B47;
+$input: #F7F7F5;
+$border: #E4E4E4;
+
+.Contacts {
+    .wrapper {
+        @media (max-width:767px) {
+            padding-left: 8vw;
+            padding-right: 8vw;
+        }
+
+        .forms {
+            gap: 2vw;
+            display: grid;
+            padding: 2vw 3vw;
+            border-radius: 1vw;
+            -webkit-border-radius: 1vw;
+            -moz-border-radius: 1vw;
+            -ms-border-radius: 1vw;
+            -o-border-radius: 1vw;
+            background-color: white;
+            grid-template-columns: repeat(2, 2fr);
+
+            @media (max-width:1000px) {
+                gap: 0;
+            }
+
+            @media (max-width:767px) {
+                gap: 3vw;
+                padding: 3vw 4vw;
+                border-radius: 2vw;
+                -webkit-border-radius: 2vw;
+                -moz-border-radius: 2vw;
+                -ms-border-radius: 2vw;
+                -o-border-radius: 2vw;
+                grid-template-columns: repeat(1, 1fr);
+            }
+
+            .texts {
+                width: 100%;
+                padding-right: 4vw;
+
+                @media (max-width:767px) {
+                    padding: 0;
+                }
+
+                .title {
+                    color: $text;
+                    font-family: 'Inter', sans-serif;
+                }
+
+                .text {
+                    color: $text;
+                    margin-top: 1.5vw;
+                    font-family: 'Inter', sans-serif;
+                }
+            }
+
+            .inputs {
+                gap: 1vw;
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                padding: 0.5vw 0;
+                align-items: center;
+                justify-content: space-between;
+
+                .desc {
+                    color: $text;
+                    margin-top: 1vw;
+                    font-size: 0.9vw;
+                    width: calc(50% - 1vw);
+                    font-family: 'Inter', sans-serif;
+
+                    @media (max-width:1000px) {
+                        font-size: 1.3vw;
+                    }
+
+                    @media (max-width:767px) {
+                        font-size: 2vw;
+                    }
+                }
+
+                .send-btn {
+                    border: none;
+                    height: auto;
+                    outline: none;
+                    color: white;
+                    cursor: pointer;
+                    margin-top: 1vw;
+                    padding: 1.3vw 0;
+                    font-weight: 500;
+                    transition: 0.2s;
+                    -webkit-transition: 0.2s;
+                    -moz-transition: 0.2s;
+                    -ms-transition: 0.2s;
+                    -o-transition: 0.2s;
+                    border-radius: 1vw;
+                    -webkit-border-radius: 1vw;
+                    -moz-border-radius: 1vw;
+                    -ms-border-radius: 1vw;
+                    -o-border-radius: 1vw;
+                    width: calc(50% - 1vw);
+                    background-color: $text;
+                    font-family: 'Inter', sans-serif;
+
+                    &:hover {
+                        transform: scale(1.1);
+                        -webkit-transform: scale(1.1);
+                        -moz-transform: scale(1.1);
+                        -ms-transform: scale(1.1);
+                        -o-transform: scale(1.1);
+                    }
+
+                    @media(max-width:767px) {
+                        padding: 2.5vw 0;
+                        border-radius: 1.5vw;
+                        -webkit-border-radius: 1.5vw;
+                        -moz-border-radius: 1.5vw;
+                        -ms-border-radius: 1.5vw;
+                        -o-border-radius: 1.5vw;
+                    }
+                }
+
+                .forms-control {
+                    padding: 1vw;
+                    color: $text;
+                    outline: none;
+                    border-radius: 0.7vw;
+                    -webkit-border-radius: 0.7vw;
+                    -moz-border-radius: 0.7vw;
+                    -ms-border-radius: 0.7vw;
+                    -o-border-radius: 0.7vw;
+                    width: calc(50% - 1vw);
+                    background-color: $input;
+                    border: solid 1px $border;
+                    font-family: 'Inter', sans-serif;
+
+                    &:nth-child(1) {
+                        width: 100%;
+                    }
+
+                    &::placeholder {
+                        opacity: 0.9;
+                        color: $text;
+                        font-weight: 400;
+                    }
+
+                    @media (max-width:1000px) {
+                        padding: 1.5vw;
+                        margin-bottom: 1vw;
+                    }
+
+                    @media (max-width:767px) {
+                        padding: 2.5vw 2vw;
+                        border-radius: 1.5vw;
+                        -webkit-border-radius: 1.5vw;
+                        -moz-border-radius: 1.5vw;
+                        -ms-border-radius: 1.5vw;
+                        -o-border-radius: 1.5vw;
+                    }
+                }
+
+                .red-line {
+                    border: solid 1px red;
+                }
+
+                input::-webkit-inner-spin-button,
+                input::-webkit-outer-spin-button {
+                    appearance: none;
+                    -webkit-appearance: none;
+                    margin: 0;
+                }
+
+                input[type=number] {
+                    appearance: none;
+                    -moz-appearance: 0;
+                }
+            }
+        }
+    }
+}

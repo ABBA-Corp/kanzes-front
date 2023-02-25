@@ -1,0 +1,59 @@
+$primary: #0F1521;
+
+.ScrollTopButton {
+    right: 7vw;
+    bottom: 3vw;
+    z-index: 12;
+    width: 3vw;
+    height: 3vw;
+    display: flex;
+    cursor: pointer;
+    position: fixed;
+    align-items: center;
+    border-radius: 0.5vw;
+    -webkit-border-radius: 0.5vw;
+    -moz-border-radius: 0.5vw;
+    -ms-border-radius: 0.5vw;
+    -o-border-radius: 0.5vw;
+    justify-content: center;
+    background-color: white;
+
+    &::before {
+        color: $primary;
+        font-size: 1.5vw;
+        content: "\f062";
+        font-family: FontAwesome;
+    }
+
+    @media (max-width:767px) {
+        right: 8vw;
+        width: 6vw;
+        height: 6vw;
+        bottom: 5vw;
+        border-radius: 1vw;
+        -webkit-border-radius: 1vw;
+        -moz-border-radius: 1vw;
+        -ms-border-radius: 1vw;
+        -o-border-radius: 1vw;
+
+        &::before {
+            font-size: 2.7vw;
+        }
+    }
+
+    @media (max-width:767px) {
+        right: 8vw;
+        width: 9vw;
+        height: 9vw;
+        bottom: 5vw;
+        border-radius: 1.3vw;
+        -webkit-border-radius: 1.3vw;
+        -moz-border-radius: 1.3vw;
+        -ms-border-radius: 1.3vw;
+        -o-border-radius: 1.3vw;
+
+        &::before {
+            font-size: 4vw;
+        }
+    }
+}

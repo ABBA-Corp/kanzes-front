@@ -1,0 +1,223 @@
+.AnimationChair {
+    .wrapper {
+        gap: 2vw;
+        display: grid;
+        grid-template-columns: repeat(3, 3fr);
+
+        @media (max-width:1000px) {
+            gap: 0;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width:767px) {
+            padding: 8vw;
+            padding-bottom: 6vw;
+        }
+
+        .cards {
+            gap: 3vw;
+            z-index: 2;
+            width: 100%;
+            display: flex;
+            padding: 2vw 0;
+            position: sticky;
+            align-items: center;
+            flex-direction: column;
+            justify-content: space-between;
+
+            @media (max-width:1000px) {
+                width: 60%;
+                padding: 0;
+                padding-right: 3vw;
+            }
+
+            .info {
+                gap: 0.7vw;
+                width: 100%;
+                opacity: 0.3;
+                display: flex;
+                padding: 0.5vw;
+                position: relative;
+                border-radius: 1vw;
+                -webkit-border-radius: 1vw;
+                -moz-border-radius: 1vw;
+                -ms-border-radius: 1vw;
+                -o-border-radius: 1vw;
+                align-items: center;
+                background-color: white;
+
+                &::before {
+                    width: 0;
+                    height: 3px;
+                    content: "";
+                    right: -11vw;
+                    position: absolute;
+                    border-radius: 10px;
+                    -webkit-border-radius: 10px;
+                    -moz-border-radius: 10px;
+                    -ms-border-radius: 10px;
+                    -o-border-radius: 10px;
+                    transform-origin: left;
+                    background-color: white;
+                    transform: rotate(-15deg);
+                    -webkit-transform: rotate(-15deg);
+                    -moz-transform: rotate(-15deg);
+                    -ms-transform: rotate(-15deg);
+                    -o-transform: rotate(-15deg);
+
+                    @media (max-width:767px) {
+                        right: -16vw;
+                        transform: rotate(-20deg);
+                        -webkit-transform: rotate(-20deg);
+                        -moz-transform: rotate(-20deg);
+                        -ms-transform: rotate(-20deg);
+                        -o-transform: rotate(-20deg);
+                    }
+                }
+
+                &::after {
+                    width: 0;
+                    height: 0;
+                    top: 0.5vw;
+                    content: "";
+                    right: -12vw;
+                    position: absolute;
+                    border-radius: 50%;
+                    -webkit-border-radius: 50%;
+                    -moz-border-radius: 50%;
+                    -ms-border-radius: 50%;
+                    -o-border-radius: 50%;
+                    // background-color: black;
+                }
+
+                @media (max-width:767px) {
+                    padding: 1.5vw;
+                    border-radius: 1.8vw;
+                    -webkit-border-radius: 1.8vw;
+                    -moz-border-radius: 1.8vw;
+                    -ms-border-radius: 1.8vw;
+                    -o-border-radius: 1.8vw;
+                }
+
+                .img {
+                    height: auto;
+                    max-width: 8.5vw;
+                    min-width: 8.5vw;
+
+                    @media (max-width:1000px) {
+                        max-width: 14vw;
+                        min-width: 14vw;
+                    }
+
+                    @media (max-width:767px) {
+                        display: none;
+                    }
+                }
+
+                .texts {
+                    .info-name {
+                        color: black;
+                        font-size: 1vw;
+                        font-family: 'Syncopate', sans-serif;
+
+                        @media (max-width:1000px) {
+                            font-size: 1.8vw;
+                        }
+
+                        @media (max-width:767px) {
+                            font-size: 2.5vw;
+                        }
+                    }
+
+                    .info-text {
+                        color: black;
+                        font-size: 0.8vw;
+                        font-family: 'Syncopate', sans-serif;
+
+                        @media (max-width:1000px) {
+                            font-size: 1.5vw;
+                        }
+
+                        @media (max-width:767px) {
+                            font-size: 2vw;
+                        }
+                    }
+                }
+            }
+
+            .active {
+                opacity: 1;
+            }
+
+            .line {
+                &::before {
+                    width: 10vw;
+
+                    @media (max-width:767px) {
+                        width: 15vw;
+                    }
+                }
+
+                &::after {
+                    width: 1vw;
+                    height: 1vw;
+                }
+            }
+        }
+
+        .imgs {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            @media (max-width:1000px) {
+                width: 40%;
+            }
+
+            .img {
+                height: auto;
+                cursor: pointer;
+                max-width: 100%;
+                min-width: 100%;
+                filter: brightness(0.8);
+                -webkit-filter: brightness(0.8);
+
+                &:hover {
+                    filter: brightness(1.1);
+                    -webkit-filter: brightness(1.1);
+}
+            }
+        }
+
+        .titles {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            @media (max-width:1000px) {
+                margin-top: 3vw;
+            }
+
+            @media (max-width:767px) {
+                margin-top: 5vw;
+            }
+
+            .sub-title {
+                margin-top: 1vw;
+            }
+
+            .text {
+                opacity: 0.8;
+                margin-top: 1vw;
+                margin-bottom: 3vw;
+
+                @media (max-width:450px) {
+                    margin-bottom: 5vw;
+                }
+            }
+        }
+    }
+}

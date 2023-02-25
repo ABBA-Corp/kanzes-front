@@ -1,0 +1,114 @@
+$border: #02B1FC;
+
+.SliderProducts {
+    padding: 4vw 0;
+
+    .carousel {
+        .product {
+            height: 12vw;
+            padding: 2vw;
+            display: flex;
+            position: relative;
+            text-decoration: none;
+            align-items: flex-end;
+            justify-content: flex-start;
+            border-top-right-radius: 1.3vw;
+            border-bottom-right-radius: 1.3vw;
+            border-right: solid 0.7vw $border;
+
+            @media (max-width:1000px) {
+                height: 15vw;
+                border-top-right-radius: 1.5vw;
+                border-bottom-right-radius: 1.5vw;
+                border-right: solid 1vw $border;
+            }
+
+            @media (max-width:767px) {
+                height: 20vw;
+                border-top-right-radius: 2vw;
+                border-bottom-right-radius: 2vw;
+                border-right: solid 1.3vw $border;
+            }
+
+            .img {
+                top: 0;
+                right: 0;
+                z-index: -1;
+                height: 100%;
+                object-fit: cover;
+                position: absolute;
+                filter: brightness(0.7);
+                width: calc(100% + 0.7vw);
+                -webkit-filter: brightness(0.7);
+            }
+
+            .sub-title {
+                z-index: 2;
+                height: 100%;
+                display: flex;
+                position: sticky;
+                align-items: flex-end;
+            }
+        }
+    }
+
+    .products {
+        display: flex;
+        overflow: hidden;
+        align-items: center;
+        justify-content: center;
+
+        .product {
+            height: 12vw;
+            padding: 2vw;
+            display: flex;
+            min-width: 20vw;
+            max-width: 20vw;
+            position: relative;
+            text-decoration: none;
+            align-items: flex-end;
+            justify-content: flex-start;
+            border-top-right-radius: 1.3vw;
+            border-bottom-right-radius: 1.3vw;
+            border-right: solid 0.7vw $border;
+
+            @media (max-width:1000px) {
+                height: 15vw;
+                min-width: 25vw;
+                max-width: 25vw;
+                border-top-right-radius: 1.5vw;
+                border-bottom-right-radius: 1.5vw;
+                border-right: solid 1vw $border;
+            }
+
+            @media (max-width:767px) {
+                height: 20vw;
+                min-width: 33.3vw;
+                max-width: 33.3vw;
+                border-top-right-radius: 2vw;
+                border-bottom-right-radius: 2vw;
+                border-right: solid 1.3vw $border;
+            }
+
+            .img {
+                top: 0;
+                right: 0;
+                z-index: -1;
+                height: 100%;
+                object-fit: cover;
+                position: absolute;
+                filter: brightness(0.7);
+                width: calc(100% + 0.7vw);
+                -webkit-filter: brightness(0.7);
+            }
+
+            .sub-title {
+                z-index: 2;
+                height: 100%;
+                display: flex;
+                position: sticky;
+                align-items: flex-end;
+            }
+        }
+    }
+}

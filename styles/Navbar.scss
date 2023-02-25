@@ -1,0 +1,550 @@
+$button: #112549;
+$danger: #FF5656;
+$primary: #091831;
+$bottom-navbar: rgba(21, 41, 77, 0.4);
+$syncopate: 'Syncopate', sans-serif;
+
+.Navbar {
+    top: 0;
+    left: 0;
+    z-index: 12;
+    width: 100vw;
+    display: flex;
+    position: fixed;
+    align-items: center;
+    flex-direction: column;
+
+
+    .gradient {
+        width: 100%;
+        height: 0.5vw;
+        background: linear-gradient(90deg, #327DFF 0%, #327DFF 0%, #000000 0%, #327DFF 15.35%, #000000 28.33%);
+        background-size: 100% 100%;
+        animation-name: gradient;
+        animation-duration: 6s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+    }
+
+    @keyframes gradient {
+        50% {
+            background-size: 700% 100%;
+        }
+
+        100% {
+            background-size: 100% 100%;
+        }
+    }
+
+    .navbar {
+        gap: 2vw;
+        width: 100%;
+        display: flex;
+        padding: 0.7vw 17vw;
+        align-items: center;
+        justify-content: center;
+        background-color: $primary;
+
+        @media (max-width:1000px) {
+            gap: 1vw;
+            padding: 1vw 5vw;
+        }
+
+        @media (max-width:767px) {
+            padding: 1.5vw 8vw;
+            justify-content: space-between;
+        }
+
+        .logo {
+            width: 12vw;
+
+            @media (max-width:767px) {
+                width: 25vw;
+            }
+
+            @media (max-width:450px) {
+                width: 30vw;
+            }
+
+            .img {
+                height: auto;
+                max-width: 100%;
+                min-width: 100%;
+            }
+        }
+
+        .menu-icon {
+            color: white;
+            font-size: 5vw;
+            cursor: pointer;
+
+            @media (min-width:767.1px) {
+                display: none;
+            }
+
+            @media (max-width:450px) {
+                font-size: 8vw;
+            }
+        }
+
+        .navbar-nav {
+            // gap: 2vw;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            @media (max-width:767px) {
+                top: 0;
+                z-index: 3;
+                width: 100%;
+                right: -100%;
+                transition: 0.4s;
+                -webkit-transition: 0.4s;
+                -moz-transition: 0.4s;
+                -ms-transition: 0.4s;
+                -o-transition: 0.4s;
+                min-height: 100vh;
+                padding: 100px 5vw;
+                position: absolute;
+                flex-direction: column;
+                background-color: $primary;
+                justify-content: space-between;
+
+                .link {
+                    font-size: 18px;
+                }
+            }
+
+            .link {
+                padding: 0 0.5vw;
+
+                &:hover {
+                    color: $primary;
+                    background-color: white;
+                    border-radius: 5px;
+                    -webkit-border-radius: 5px;
+                    -moz-border-radius: 5px;
+                    -ms-border-radius: 5px;
+                    -o-border-radius: 5px;
+                }
+            }
+
+            .close-icon {
+                top: 5vw;
+                right: 5vw;
+                color: white;
+                font-size: 35px;
+                position: absolute;
+
+                @media (min-width:767.1px) {
+                    display: none;
+                }
+            }
+        }
+
+        .show-navbar {
+            right: 0;
+        }
+
+        .language {
+            display: flex;
+            position: relative;
+            justify-content: center;
+
+            .lang-title {
+                cursor: pointer;
+                padding: 0.5vw 1vw;
+                border-radius: 0.7vw;
+                -webkit-border-radius: 0.7vw;
+                -moz-border-radius: 0.7vw;
+                -ms-border-radius: 0.7vw;
+                -o-border-radius: 0.7vw;
+                background-color: $button;
+
+                &:hover {
+                    color: $button;
+                    background-color: white;
+                }
+
+                @media (max-width:767px) {
+                    font-size: 20px;
+                    padding: 10px 15px;
+                    border-radius: 5px;
+                    -webkit-border-radius: 5px;
+                    -moz-border-radius: 5px;
+                    -ms-border-radius: 5px;
+                    -o-border-radius: 5px;
+                    border: solid 1px white;
+                }
+            }
+
+            .lang-menu {
+                top: 2.5vw;
+                z-index: 11;
+                overflow: hidden;
+                position: absolute;
+                border-radius: 0.7vw;
+                -webkit-border-radius: 0.7vw;
+                -moz-border-radius: 0.7vw;
+                -ms-border-radius: 0.7vw;
+                -o-border-radius: 0.7vw;
+                background-color: $button;
+
+                @media (max-width:767px) {
+                    top: 50px;
+                    border-radius: 5px;
+                    -webkit-border-radius: 5px;
+                    -moz-border-radius: 5px;
+                    -ms-border-radius: 5px;
+                    -o-border-radius: 5px;
+                    border: solid 1px white;
+                }
+
+                .lang-items {
+                    cursor: pointer;
+                    padding: 0.3vw 1vw;
+
+                    &:hover {
+                        color: $button;
+                        background-color: white;
+                    }
+
+                    @media (max-width:767px) {
+                        font-size: 20px;
+                        padding: 8px 15px;
+                    }
+                }
+            }
+        }
+
+        .tel-btn {
+            padding: 0.5vw 1vw;
+            border-radius: 0.7vw;
+            -webkit-border-radius: 0.7vw;
+            -moz-border-radius: 0.7vw;
+            -ms-border-radius: 0.7vw;
+            -o-border-radius: 0.7vw;
+            background-color: $button;
+
+            &:hover {
+                color: $button;
+                background-color: white;
+            }
+
+            @media (max-width:767px) {
+                font-size: 20px;
+                padding: 10px 15px;
+                border-radius: 5px;
+                -webkit-border-radius: 5px;
+                -moz-border-radius: 5px;
+                -ms-border-radius: 5px;
+                -o-border-radius: 5px;
+                border: solid 1px white;
+            }
+        }
+    }
+
+    .bottom-navbar {
+        gap: 1vw;
+        width: 70%;
+        display: flex;
+        margin-top: 1vw;
+        padding: 0.5vw 1vw;
+        position: relative;
+        align-items: center;
+        border-radius: 0.5vw;
+        -webkit-border-radius: 0.5vw;
+        -moz-border-radius: 0.5vw;
+        -ms-border-radius: 0.5vw;
+        -o-border-radius: 0.5vw;
+        justify-content: space-between;
+        background-color: $bottom-navbar;
+        backdrop-filter: blur(100px);
+
+        &::after {
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            content: "";
+            z-index: -1;
+            position: absolute;
+            border-radius: 0.5vw;
+            -webkit-border-radius: 0.5vw;
+            -moz-border-radius: 0.5vw;
+            -ms-border-radius: 0.5vw;
+            -o-border-radius: 0.5vw;
+            border: 3px solid transparent;
+            background: linear-gradient(90deg, #2E68CE, #091831) border-box;
+            mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+            -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: destination-out;
+            mask-composite: exclude;
+
+            @media (max-width:1000px) {
+                border-radius: 1vw;
+                -webkit-border-radius: 1vw;
+                -moz-border-radius: 1vw;
+                -ms-border-radius: 1vw;
+                -o-border-radius: 1vw;
+            }
+
+            @media (max-width:767px) {
+                border-radius: 1vw;
+                border: solid 2px transparent;
+                -webkit-border-radius: 1vw;
+                -moz-border-radius: 1vw;
+                -ms-border-radius: 1vw;
+                -o-border-radius: 1vw;
+                display: none;
+            }
+        }
+
+        @media (max-width:1000px) {
+            width: 93%;
+            padding: 0.8vw 1vw;
+            border-radius: 1vw;
+            -webkit-border-radius: 1vw;
+            -moz-border-radius: 1vw;
+            -ms-border-radius: 1vw;
+            -o-border-radius: 1vw;
+        }
+
+        @media (max-width:767px) {
+            gap: 4vw;
+            width: 100%;
+            margin-top: 0;
+            padding: 1vw 8vw;
+            border-radius: 0;
+            -webkit-border-radius: 0;
+            -moz-border-radius: 0;
+            -ms-border-radius: 0;
+            -o-border-radius: 0;
+            backdrop-filter: blur(0px);
+            background-color: #213B67;
+        }
+
+        .catalog-btn {
+            gap: 3vw;
+            display: flex;
+            cursor: pointer;
+            padding: 0.8vw 4vw;
+            border-radius: 1vw;
+            -webkit-border-radius: 1vw;
+            -moz-border-radius: 1vw;
+            -ms-border-radius: 1vw;
+            -o-border-radius: 1vw;
+            align-items: center;
+            background-color: $button;
+
+            @media (min-width:767.1px) {
+                display: none;
+            }
+        }
+
+        .catalogs {
+            gap: 1vw;
+            width: 90%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            @media (max-width:767px) {
+                top: -10vw;
+                z-index: 3;
+                left: -150vw;
+                width: 105vw;
+                transition: 0.4s;
+                -webkit-transition: 0.4s;
+                -moz-transition: 0.4s;
+                -ms-transition: 0.4s;
+                -o-transition: 0.4s;
+                min-height: 102vh;
+                position: absolute;
+                padding: 100px 5vw;
+                flex-direction: column;
+                background-color: $primary;
+            }
+
+            @media (max-width:450px) {
+                top: -13vw;
+            }
+
+            .close-icon {
+                top: 5vw;
+                right: 5vw;
+                color: white;
+                font-size: 35px;
+                position: absolute;
+
+                @media (min-width:767.1px) {
+                    display: none;
+                }
+            }
+        }
+
+        .show-catalog {
+            left: -27vw;
+
+            @media (max-width:450px) {
+                left: -21vw;
+            }
+        }
+
+        .drop {
+            display: flex;
+            cursor: pointer;
+            align-items: center;
+            border: solid 1px transparent;
+            border-right-color: rgba(255, 255, 255, 0.452);
+
+            @media (max-width:767px) {
+                border: none;
+            }
+
+            .icon {
+                font-size: 1.5vw;
+                margin-top: -3px;
+
+                @media (max-width:767px) {
+                    font-size: 6vw;
+                    margin-top: -5px;
+                }
+            }
+        }
+
+        .constructor {
+            padding: 0.7vw;
+            border-radius: 0.7vw;
+            -webkit-border-radius: 0.7vw;
+            -moz-border-radius: 0.7vw;
+            -ms-border-radius: 0.7vw;
+            -o-border-radius: 0.7vw;
+            background-color: $button;
+
+            &:hover {
+                color: $button;
+                background-color: white;
+            }
+        }
+
+        .tool-icons{
+            gap: 1vw;
+            display: flex;
+            align-items: center;
+            @media (max-width:767px) {
+                gap: 2vw;
+            }
+        }
+
+        .search {
+            padding: 0.3vw;
+            color: white;
+            cursor: pointer;
+            font-size: 2.4vw;
+            border-radius: 0.7vw;
+            -webkit-border-radius: 0.7vw;
+            -moz-border-radius: 0.7vw;
+            -ms-border-radius: 0.7vw;
+            -o-border-radius: 0.7vw;
+            background-color: $button;
+
+            &:hover {
+                color: $button;
+                background-color: white;
+            }
+
+            @media (max-width:1000px) {
+                font-size: 3.5vw;
+            }
+
+            @media (max-width:767px) {
+                font-size: 5vw;
+                padding: 0.6vw;
+                border-radius: 1vw;
+                -webkit-border-radius: 1vw;
+                -moz-border-radius: 1vw;
+                -ms-border-radius: 1vw;
+                -o-border-radius: 1vw;
+            }
+
+            @media (max-width:450px) {
+                font-size: 8vw;
+                padding: 0.8vw;
+            }
+        }
+
+        .shopping {
+            display: flex;
+            position: relative;
+            align-items: center;
+            justify-content: center;
+
+            &::after {
+                content: "";
+                top: -0.2vw;
+                right: -0.2vw;
+                width: 0.8vw;
+                height: 0.8vw;
+                position: absolute;
+                border-radius: 50%;
+                -webkit-border-radius: 50%;
+                -moz-border-radius: 50%;
+                -ms-border-radius: 50%;
+                -o-border-radius: 50%;
+                background-color: $danger;
+
+                @media (max-width:1000px) {
+                    top: -0.5vw;
+                    right: -0.5vw;
+                    width: 1.3vw;
+                    height: 1.3vw;
+                }
+
+                @media (max-width:767px) {
+                    width: 2vw;
+                    height: 2vw;
+                    top: -0.8vw;
+                }
+            }
+
+            .cart {
+                padding: 0.4vw;
+                color: white;
+                cursor: pointer;
+                font-size: 2.4vw;
+                border-radius: 0.7vw;
+                -webkit-border-radius: 0.7vw;
+                -moz-border-radius: 0.7vw;
+                -ms-border-radius: 0.7vw;
+                -o-border-radius: 0.7vw;
+                background-color: $button;
+
+                &:hover {
+                    color: $button;
+                    background-color: white;
+                }
+
+                @media (max-width:1000px) {
+                    font-size: 3.5vw;
+                }
+
+                @media (max-width:767px) {
+                    font-size: 5vw;
+                    padding: 0.6vw;
+                    border-radius: 1vw;
+                    -webkit-border-radius: 1vw;
+                    -moz-border-radius: 1vw;
+                    -ms-border-radius: 1vw;
+                    -o-border-radius: 1vw;
+                }
+
+                @media (max-width:450px) {
+                    font-size: 8vw;
+                    padding: 0.8vw;
+                }
+            }
+        }
+    }
+}
