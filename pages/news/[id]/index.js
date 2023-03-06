@@ -119,7 +119,7 @@ function News() {
                                     <div className="top">
                                         <h3 className="name">{post.author_uz}</h3>
                                         <p className="text">{post.date}</p>
-                                    </div>
+                                    </div> 
                                     <p className="text">{post.description_uz}</p>
                                 </div>
                             ))}
