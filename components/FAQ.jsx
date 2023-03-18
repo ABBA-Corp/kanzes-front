@@ -4,11 +4,18 @@ import { useRouter } from "next/router";
 import { Skeleton } from "@mui/material";
 import { fetchFaqApi } from "@/pages/api/Api";
 import { AddRounded } from "@mui/icons-material";
+import UZ from '../public/locales/uz/common.json';
+import RU from '../public/locales/ru/common.json';
+import EN from '../public/locales/en/common.json';
 
 function FAQ() {
 
     const router = useRouter();
     const [activeIndex, setActiveIndex] = useState(null);
+
+    // i18next
+
+    const t = router.locale == "uz" ? UZ : router.locale == "ru" ? RU : EN;
 
     // data of FAQ
 
@@ -36,7 +43,7 @@ function FAQ() {
     return (
         <div className="FAQ parent">
             <div className="wrapper">
-                <h1 className="title">FAQ: savollarga javoblar</h1>
+                <h1 className="title">{t.faq}</h1>
                 {dataFAQ.map((item) => (
                     <div key={item.id} className="bar">
                         <div className="question">

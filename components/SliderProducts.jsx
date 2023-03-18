@@ -68,14 +68,6 @@ function SliderProducts() {
 
     return (
         <div className="SliderProducts parent">
-            {/* <Slider {...settings} className="carousel">
-                {data?.data.map((item) => (
-                    <Link key={item.id} href={`/products/${item.id}`} className="product">
-                        <Image loader={() => `${item.image ? item.image : ""}?w=1500&q=1000`} src={item.image ? item.image : ""} priority alt="image" className="img" width={1000} height={500} />
-                        <h3 className="sub-title">{router.locale == "uz" ? item.title_uz : router.locale == "ru" ? item.title_ru : item.title_en}</h3>
-                    </Link>
-                ))}
-            </Slider> */}
             <div className="products">
                 {data?.data.map((item) => (
                     <Link key={item.id} href={`/products/${item.id}`} className="product" style={{ marginLeft: `${-scrollValue}px` }}>

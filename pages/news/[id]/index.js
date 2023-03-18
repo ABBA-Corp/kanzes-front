@@ -4,6 +4,9 @@ import { useQuery } from "react-query";
 import { useRouter } from "next/router";
 import { Skeleton } from "@mui/material";
 import { COMMENTS_DATA_URL } from "@/pages/api/ApiUrl";
+import UZ from '../../../public/locales/uz/common.json';
+import RU from '../../../public/locales/ru/common.json';
+import EN from '../../../public/locales/en/common.json';
 import { fetchNewsApi, fetchNewsCommentApi } from "@/pages/api/Api";
 
 function News() {
@@ -32,6 +35,10 @@ function News() {
         setTextValue(item);
         setInvalidText(false);
     };
+
+    // i18next
+
+    const t = router.locale == "uz" ? UZ : router.locale == "ru" ? RU : EN;
 
     // data of comments
 
@@ -111,7 +118,7 @@ function News() {
                         <p className="text">{router.locale == "uz" ? item.description_uz : router.locale == "ru" ? item.description_ru : item.description_en}</p>
                         <Image loader={() => `${item.image ? item.image : ""}?w=1500&q=1000`} src={item.image ? item.image : ""} priority alt="image" className="img" width={1500} height={1000} />
                     </div>
-                    <h1 className="title comment-title">обсуждение</h1>
+                    <h1 className="title comment-title">{t.comment}</h1>
                     <div className="new-comments">
                         <div className="comments">
                             {dataComments?.data?.data?.filter((k) => k.news_id == id).map((post) => (
@@ -119,15 +126,15 @@ function News() {
                                     <div className="top">
                                         <h3 className="name">{post.author_uz}</h3>
                                         <p className="text">{post.date}</p>
-                                    </div> 
+                                    </div>
                                     <p className="text">{post.description_uz}</p>
                                 </div>
                             ))}
                         </div>
                         <div className="forms">
-                            <input type="text" className={`forms-control text ${invalidName && "red-line"}`} value={nameValue} onChange={(e) => changeName(e.target.value)} placeholder="Ism" />
-                            <textarea rows="5" className={`forms-control text ${invalidText && "red-line"}`} value={textValue} onChange={(e) => changeText(e.target.value)} placeholder="Comment"></textarea>
-                            <button className="send-btn btn-text" onClick={sendComment}>ОТправить</button>
+                            <input type="text" className={`forms-control text ${invalidName && "red-line"}`} value={nameValue} onChange={(e) => changeName(e.target.value)} placeholder={`${t.name}`} />
+                            <textarea rows="5" className={`forms-control text ${invalidText && "red-line"}`} value={textValue} onChange={(e) => changeText(e.target.value)} placeholder={`${t.comment2}`}></textarea>
+                            <button className="send-btn btn-text" onClick={sendComment}>{t.send}</button>
                         </div>
                     </div>
                 </div>

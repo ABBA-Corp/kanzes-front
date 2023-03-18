@@ -4,11 +4,18 @@ import Slider from 'react-slick';
 import { useQuery } from 'react-query';
 import { useRouter } from 'next/router';
 import { Skeleton } from '@mui/material';
+import UZ from '../public/locales/uz/common.json';
+import RU from '../public/locales/ru/common.json';
+import EN from '../public/locales/en/common.json';
 import { fetchTopProductsApi } from '@/pages/api/Api';
 
 function TopProducts() {
 
     const router = useRouter();
+
+    // i18next
+
+    const t = router.locale == "uz" ? UZ : router.locale == "ru" ? RU : EN
 
     const settings = {
         speed: 2000,
@@ -73,7 +80,7 @@ function TopProducts() {
     return (
         <div className="TopProducts parent">
             <div className="wrapper">
-                <h1 className="title">Top mahsulotlarimiz</h1>
+                <h1 className="title">{t.top_product}</h1>
                 <Slider {...settings} className="carousel">
                     {data?.data.map((item) => (
                         <div key={item.id} className="product">
@@ -81,7 +88,7 @@ function TopProducts() {
                                 <Image loader={() => `${item.image ? item.image : ""}?w=1500&q=1000`} src={item.image ? item.image : ""} priority alt="image" className="img" width={1000} height={500} />
                                 <h4 className='name'>{router.locale == "uz" ? item.name_uz : router.locale == "ru" ? item.name_ru : item.name_en}</h4>
                                 <p className="text">{router.locale == "uz" ? item.description_uz : router.locale == "ru" ? item.description_ru : item.description_en}</p>
-                                <Link href={`/products/${item.id}`} className="explore btn-text">batafsil</Link>
+                                <Link href={`/products/${item.id}`} className="explore btn-text">{t.more}</Link>
                             </div>
                         </div>
                     ))}

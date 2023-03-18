@@ -25,17 +25,17 @@ $background: #0F1521;
 
     .wrapper {
         display: flex;
-        padding-right: 45%;
+        padding-right: 35%;
         flex-direction: column;
         align-items: flex-start;
         justify-content: flex-end;
 
         @media (max-width:1000px) {
-            padding-right: 35%;
+            padding-right: 25%;
         }
 
         @media (max-width:767px) {
-            padding-left: 8vw;
+            padding-left: 5vw;
             padding-right: 5vw;
         }
 

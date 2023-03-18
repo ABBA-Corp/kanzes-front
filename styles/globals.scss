@@ -20,10 +20,6 @@ body {
   background-color: $background;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 .parent {
   margin: 0;
   padding: 0;
@@ -229,4 +225,39 @@ html {
   height: 100%;
   position: fixed;
   background-color: rgba(0, 0, 0, 0.268);
+}
+
+.media {
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 13;
+  height: 100%;
+  display: flex;
+  position: fixed;
+  align-items: center;
+  justify-content: center;
+
+  .video {
+    width: 50vw;
+    height: 30vw;
+    overflow: hidden;
+    border-radius: 2vw;
+    border: solid 1px white;
+
+    @media (max-width:767px) {
+      width: 90%;
+      height: 50vw;
+      margin-top: 4vw;
+    }
+
+    iframe {
+      max-width: 100%;
+      min-width: 100%;
+      max-height: 100%;
+      min-height: 100%;
+      position: sticky;
+      z-index: 1000001;
+    }
+  }
 }

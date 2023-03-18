@@ -1,25 +1,37 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { useQuery } from 'react-query';
 import { useRouter } from 'next/router';
-import { dataProducts } from './api/Api';
+import { fetchProductsApi } from './api/Api';
 import Img from '../assets//images/header.png';
+import UZ from '../public/locales/uz/common.json';
+import RU from '../public/locales/ru/common.json';
+import EN from '../public/locales/en/common.json';
 
 function About() {
 
     const router = useRouter();
 
+    // i18next
+
+    const t = router.locale == "uz" ? UZ : router.locale == "ru" ? RU : EN;
+
+    // data of products
+
+    const { data } = useQuery('products', fetchProductsApi);
+
     return (
         <div className="About parent">
             <div className="wrapper">
-                <h1 className="title">biz haqimizda</h1>
+                <h1 className="title">{t.about_text}</h1>
                 <div className="body">
                     <div className="products">
-                        {dataProducts.slice(0, 15).map((item) => (
+                        {data?.data?.slice(0, 15).map((item) => (
                             <Link key={item.id} href={`/products/${item.id}`} className="name">{router.locale == "uz" ? item.name_uz : router.locale == "ru" ? item.name_ru : item.name_en}</Link>
                         ))}
                     </div>
                     <div className="texts">
-                        <p className="text">m Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versionm </p>
+                        <p className="text">{t.about_text2}</p>
                         <div className="cards">
                             <div className="info">
                                 <h3 className='name'>14 yillik tajriba</h3>
@@ -38,7 +50,6 @@ function About() {
                                 <p className='footer-text'>m Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy</p>
                             </div>
                         </div>
-                        <p className="text">m Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also </p>
                         <Image src={Img} priority alt="image" className="img" width={1000} height={500} />
                     </div>
                 </div>

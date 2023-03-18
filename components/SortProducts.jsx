@@ -4,11 +4,18 @@ import Slider from "react-slick";
 import { useQuery } from "react-query";
 import { useRouter } from "next/router";
 import { Skeleton } from "@mui/material";
+import UZ from '../public/locales/uz/common.json';
+import RU from '../public/locales/ru/common.json';
+import EN from '../public/locales/en/common.json';
 import { fetchProductsApi } from "@/pages/api/Api";
 
 function SortProducts() {
 
     const router = useRouter();
+
+    // i18next
+
+    const t = router.locale == "uz" ? UZ : router.locale == "ru" ? RU : EN
 
     const settings = {
         speed: 2000,
@@ -64,10 +71,10 @@ function SortProducts() {
     }
 
     return (
-        <div className="SortProducts parent">
+        <div className="SortProducts parent" id="sort">
             <div className="wrapper">
-                <h1 className="title">Material orqali saralash</h1>
-                <p className="text">Авточехол KANZEC для TrailBlazer (3 ряда), шотландка Салон автомобиля - предмет особой гордости и заботы его владельца.</p>
+                <h1 className="title">{t.filter}</h1>
+                <p className="text">{t.material_desc}</p>
             </div>
             <Slider {...settings} className="carousel">
                 {data?.data.map((item) => (

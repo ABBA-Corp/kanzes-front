@@ -4,7 +4,10 @@ import { useState } from "react";
 import Searching from "./Searching";
 import { useRouter } from "next/router";
 import Logo from '../assets/images/logo.png';
-import { ArrowDropDown, Close, MenuRounded, SearchRounded, ShoppingCartOutlined, SortRounded } from "@mui/icons-material";
+import UZ from '../public/locales/uz/common.json';
+import RU from '../public/locales/ru/common.json';
+import EN from '../public/locales/en/common.json';
+import { Close, MenuRounded, SearchRounded, SortRounded } from "@mui/icons-material";
 
 const Navbar = () => {
 
@@ -24,11 +27,15 @@ const Navbar = () => {
         router.push({ pathname, query }, asPath, { locale: item })
         setLanguage(!language)
         setShowMenu(false)
-    }
+    };
 
     // search methods
 
     const [showSearch, setShowSearch] = useState(false);
+
+    // i18next
+
+    const t = router.locale == "uz" ? UZ : router.locale == "ru" ? RU : EN;
 
     return (
         <div className={`Navbar`}>
@@ -38,12 +45,12 @@ const Navbar = () => {
                     <Image src={Logo} priority={true} alt="logo" className="img" />
                 </Link>
                 <div className={`navbar-nav ${showMenu && "show-navbar"}`}>
-                    <Link href="/" className="link text">Bizning do’konlarimiz</Link>
-                    <Link href="/" className="link text">Kompaniyamiz haqida</Link>
-                    <Link href="/" className="link text">Social media</Link>
-                    <Link href="/" className="link text">Bizning do’konlarimiz</Link>
+                    <Link href="/#about" scroll={false} className="link text" onClick={() => setShowMenu(false)}>{t.nav1}</Link>
+                    <Link href="/#serv" scroll={false} className="link text" onClick={() => setShowMenu(false)}>{t.nav2}</Link>
+                    <Link href="/#contacts" scroll={false} className="link text" onClick={() => setShowMenu(false)}>{t.nav3}</Link>
+                    <Link href="/#sort" scroll={false} className="link text" onClick={() => setShowMenu(false)}>{t.nav4}</Link>
                     <div className="language">
-                        <div className="lang-title sub-title" onClick={() => setLanguage(!language)}>UZ</div>
+                        <div className="lang-title sub-title" onClick={() => setLanguage(!language)}>{router.locale.toUpperCase()}</div>
                         {language &&
                             <div className="lang-menu">
                                 <div className="lang-items sub-title" onClick={() => changeLocaleLang("uz")}>UZ</div>
@@ -56,27 +63,22 @@ const Navbar = () => {
                         }
                     </div>
                     <Close className="close-icon" onClick={() => setShowMenu(false)} />
-                    <a href="tel:+99899-313-1501" className="tel-btn sub-title">
-                        Aloqa
-                    </a>
+                    <a href="tel:+998903207480" className="tel-btn sub-title">{t.nav5}</a>
                 </div>
                 <MenuRounded className="menu-icon" onClick={() => setShowMenu(true)} />
             </nav>
             <nav className="bottom-navbar">
                 <div className="catalog-btn sub-title" onClick={() => setShowCatalog(true)}><SortRounded className="list-icon" /> Catalog</div>
                 <div className={`catalogs ${showCatalog && "show-catalog"}`}>
-                    <div className="drop sub-title">Avto cases <ArrowDropDown className="icon" /></div>
-                    <div className="drop sub-title">Aksesuvar <ArrowDropDown className="icon" /></div>
-                    <div className="drop sub-title">Issiq chexol <ArrowDropDown className="icon" /></div>
-                    <div className="drop sub-title">Kovriklar <ArrowDropDown className="icon" /></div>
+                    <div className="drop sub-title">Avto cases</div>
+                    <div className="drop sub-title">Aksesuvar</div>
+                    <div className="drop sub-title">Issiq chexol</div>
+                    <div className="drop sub-title">Kovriklar</div>
                     <div className="drop sub-title" style={{ border: "none" }}>MAxsus chexol</div>
                     <Close className="close-icon" onClick={() => setShowCatalog(false)} />
                 </div>
                 <div className="tool-icons">
                     <SearchRounded className="search" onClick={() => setShowSearch(true)} />
-                    <div className="shopping">
-                        <ShoppingCartOutlined className="cart" />
-                    </div>
                 </div>
             </nav>
             {showSearch &&

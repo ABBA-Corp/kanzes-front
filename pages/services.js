@@ -1,13 +1,23 @@
 import Image from "next/image";
 import { useState } from "react";
 import { useQuery } from "react-query";
+import { useRouter } from "next/router";
 import { Skeleton } from "@mui/material";
 import { fetchWorksApi } from "./api/Api";
+import UZ from '../public/locales/uz/common.json';
+import RU from '../public/locales/ru/common.json';
+import EN from '../public/locales/en/common.json';
 import { CloseRounded } from "@mui/icons-material";
 
 function Services() {
 
     const [pointImg, setPointImg] = useState("");
+
+    const router = useRouter();
+
+    // i18next
+
+    const t = router.locale == "uz" ? UZ : router.locale == "ru" ? RU : EN;
 
     // data of works
 
@@ -39,8 +49,7 @@ function Services() {
             <div className="Services parent">
                 <div className="wrapper">
                     <div className="header">
-                        <h1 className="title">Bizning mutaxasislar IShlari</h1>
-                        <p className="text">Идейные соображения высшего порядка, а также рамки и место обучения кадров позволяет выполнять важные задания по разработке новых предложений. Таким образом начало повседневной работы по формированию позиции влечет за собой процесс внедрения и модернизации системы обучения кадров, соответствует насущным потребностям.</p>
+                        <h1 className="title">{t.ornatilgandan_song}</h1>
                     </div>
                     <div className="cards">
                         {data?.data?.map((item) => (

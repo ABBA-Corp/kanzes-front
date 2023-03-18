@@ -7,6 +7,9 @@ import { Skeleton } from "@mui/material";
 import { Close } from "@mui/icons-material";
 import TopProducts from "@/components/TopProducts";
 import { fetchProductsApi } from "@/pages/api/Api";
+import UZ from '../../../public/locales/uz/common.json';
+import RU from '../../../public/locales/ru/common.json';
+import EN from '../../../public/locales/en/common.json';
 
 function Products() {
 
@@ -23,6 +26,10 @@ function Products() {
     function decrement() {
         setCountNum(c => c == 1 ? c : c - 1)
     };
+
+    // i18next
+
+    const t = router.locale == "uz" ? UZ : router.locale == "ru" ? RU : EN;
 
     // modal
 
@@ -157,29 +164,37 @@ function Products() {
                         <div className="imgs">
                             <Image loader={() => `${mainImg ? mainImg : item.image ? item.image : ""}?w=1500&q=1000`} src={mainImg ? mainImg : item.image} priority alt="image" className="main-img" width={1500} height={1000} />
                             <div className="additional-imgs">
-                                <Image loader={() => `${item.image ? item.image : ""}?w=1500&q=1000`} src={item.image ? item.image : ""} priority alt="image" className="img" width={1500} height={1000} onClick={() => setMainImg(item.image)} />
-                                <Image loader={() => `${item.image1 ? item.image1 : ""}?w=1500&q=1000`} src={item.image1 ? item.image1 : ""} priority alt="image" className="img" width={1500} height={1000} onClick={() => setMainImg(item.image1)} />
-                                <Image loader={() => `${item.image2 ? item.image2 : ""}?w=1500&q=1000`} src={item.image2 ? item.image2 : ""} priority alt="image" className="img" width={1500} height={1000} onClick={() => setMainImg(item.image2)} />
-                                <Image loader={() => `${item.image3 ? item.image3 : ""}?w=1500&q=1000`} src={item.image3 ? item.image3 : ""} priority alt="image" className="img" width={1500} height={1000} onClick={() => setMainImg(item.image3)} />
+                                {item.image &&
+                                    <Image loader={() => `${item.image ? item.image : ""}?w=1500&q=1000`} src={item.image ? item.image : ""} priority alt="image" className="img" width={1500} height={1000} onClick={() => setMainImg(item.image)} />
+                                }
+                                {item.image1 &&
+                                    <Image loader={() => `${item.image1 ? item.image1 : ""}?w=1500&q=1000`} src={item.image1 ? item.image1 : ""} priority alt="image" className="img" width={1500} height={1000} onClick={() => setMainImg(item.image1)} />
+                                }
+                                {item.image2 &&
+                                    <Image loader={() => `${item.image2 ? item.image2 : ""}?w=1500&q=1000`} src={item.image2 ? item.image2 : ""} priority alt="image" className="img" width={1500} height={1000} onClick={() => setMainImg(item.image2)} />
+                                }
+                                {item.image3 &&
+                                    <Image loader={() => `${item.image3 ? item.image3 : ""}?w=1500&q=1000`} src={item.image3 ? item.image3 : ""} priority alt="image" className="img" width={1500} height={1000} onClick={() => setMainImg(item.image3)} />
+                                }
                             </div>
                         </div>
                         <div className="infos">
                             <h1 className="title">{router.locale == "uz" ? item.name_uz : router.locale == "ru" ? item.name_ru : item.name_en}</h1>
-                            <p className="text">Выберите цвет: Эко 9 Черный+Белый</p>
+                            <p className="text">{t.choose_color}</p>
                             <div className="colors">
                                 <div className="color" style={{ backgroundColor: `${item.color1}` }}></div>
                                 <div className="color" style={{ backgroundColor: `${item.color2}` }}></div>
                                 <div className="color" style={{ backgroundColor: `${item.color3}` }}></div>
                                 <div className="color" style={{ backgroundColor: `${item.color4}` }}></div>
                             </div>
-                            <div className="text">Цена: <h3 className="name">{item.price} som</h3></div>
+                            <div className="text">{t.price}: <h3 className="name">{item.price} {t.valuta}</h3></div>
                             <div className="buy">
-                                <h3 className="name">Договорная</h3>
+                                <h3 className="name">{t.product}</h3>
                                 <div className="btns">
                                     <button className="count btn-text" onClick={decrement}>К</button>
                                     <h3 className="count-num title">{countNum}</h3>
                                     <button className="count btn-text" onClick={increment}>К</button>
-                                    <button className="buy-btn btn-text" onClick={() => changeProdValue(item.name_uz)}>Купить в один клик</button>
+                                    <button className="buy-btn btn-text" onClick={() => changeProdValue(item.name_uz)}>{t.btn}</button>
                                 </div>
                             </div>
                             <p className="text">{router.locale == "uz" ? item.description_uz : router.locale == "ru" ? item.description_ru : item.description_en}</p>

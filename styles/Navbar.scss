@@ -345,7 +345,7 @@ $syncopate: 'Syncopate', sans-serif;
 
         .catalogs {
             gap: 1vw;
-            width: 90%;
+            width: 100%;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -395,6 +395,7 @@ $syncopate: 'Syncopate', sans-serif;
         .drop {
             display: flex;
             cursor: pointer;
+            padding: 0 1.5vw;
             align-items: center;
             border: solid 1px transparent;
             border-right-color: rgba(255, 255, 255, 0.452);
@@ -429,10 +430,11 @@ $syncopate: 'Syncopate', sans-serif;
             }
         }
 
-        .tool-icons{
+        .tool-icons {
             gap: 1vw;
             display: flex;
             align-items: center;
+
             @media (max-width:767px) {
                 gap: 2vw;
             }

@@ -118,20 +118,6 @@
                 .texts {
                     .info-name {
                         color: black;
-                        font-size: 1vw;
-                        font-family: 'Syncopate', sans-serif;
-
-                        @media (max-width:1000px) {
-                            font-size: 1.8vw;
-                        }
-
-                        @media (max-width:767px) {
-                            font-size: 2.5vw;
-                        }
-                    }
-
-                    .info-text {
-                        color: black;
                         font-size: 0.8vw;
                         font-family: 'Syncopate', sans-serif;
 
@@ -140,7 +126,21 @@
                         }
 
                         @media (max-width:767px) {
-                            font-size: 2vw;
+                            font-size: 2.3vw;
+                        }
+                    }
+
+                    .info-text {
+                        color: black;
+                        font-size: 0.6vw;
+                        font-family: 'Syncopate', sans-serif;
+
+                        @media (max-width:1000px) {
+                            font-size: 1.2vw;
+                        }
+
+                        @media (max-width:767px) {
+                            font-size: 1.8vw;
                         }
                     }
                 }
@@ -187,7 +187,7 @@
                 &:hover {
                     filter: brightness(1.1);
                     -webkit-filter: brightness(1.1);
-}
+                }
             }
         }
 

@@ -1,6 +1,12 @@
 import { useState } from "react";
+import { useRouter } from "next/router";
+import UZ from '../public/locales/uz/common.json';
+import RU from '../public/locales/ru/common.json';
+import EN from '../public/locales/en/common.json';
 
 function Contacts({ changeModal }) {
+
+    const router = useRouter();
 
     // input values
 
@@ -11,7 +17,6 @@ function Contacts({ changeModal }) {
     // invalid input states
 
     const [invalidName, setInvalidName] = useState(false);
-    const [invalidEmail, setInvalidEmail] = useState(false);
     const [invalidNumber, setInvalidNumber] = useState(false);
 
     // change values and invalids functions
@@ -28,7 +33,6 @@ function Contacts({ changeModal }) {
 
     function changeEmail(item) {
         setEmailValue(item);
-        setInvalidEmail(false);
     };
 
     // send message to telegram bot
@@ -61,20 +65,24 @@ function Contacts({ changeModal }) {
         }
     };
 
+    // i18next
+
+    const t = router.locale == "uz" ? UZ : router.locale == "ru" ? RU : EN;
+
     return (
-        <div className="Contacts parent">
+        <div className="Contacts parent" id="contacts">
             <div className="wrapper">
                 <div className="forms">
                     <div className="texts">
-                        <h1 className="title">Поможем в выборе!</h1>
-                        <p className="text">Если у вас есть вопросы о формате или вы не знаете, что выбрать, оставьте свой номер — мы позвоним, чтобы ответить на все ваши вопросы.</p>
+                        <h1 className="title">{t.contact1}</h1>
+                        <p className="text">{t.contact2}</p>
                     </div>
                     <div className="inputs">
-                        <input type="text" className={`forms-control text ${invalidName && "red-line"}`} value={nameValue} onChange={(e) => changeName(e.target.value)} placeholder="Ism" />
-                        <input type="number" className={`forms-control text ${invalidNumber && "red-line"}`} value={numberValue} onChange={(e) => changeNumber(e.target.value)} placeholder="Telefon raqam" />
-                        <input type="text" className={`forms-control text`} value={emailValue} onChange={(e) => changeEmail(e.target.value)} placeholder="Email" />
-                        <a href="#" className="desc">Нажимая на кнопку, я соглашаюсь на  обработку персональных данных  и  с правилами пользования Платформой</a>
-                        <button className="send-btn btn-text" onClick={sendMessage}>Отправить</button>
+                        <input type="text" className={`forms-control text ${invalidName && "red-line"}`} value={nameValue} onChange={(e) => changeName(e.target.value)} placeholder={`${t.name}`} />
+                        <input type="number" className={`forms-control text ${invalidNumber && "red-line"}`} value={numberValue} onChange={(e) => changeNumber(e.target.value)} placeholder={`${t.phone}`} />
+                        <input type="text" className={`forms-control text`} value={emailValue} onChange={(e) => changeEmail(e.target.value)} placeholder={`${t.email}`} />
+                        <a href="#" style={{ opacity: 0 }} className="desc">Нажимая на кнопку, я соглашаюсь на  обработку персональных данных  и  с правилами пользования Платформой</a>
+                        <button className="send-btn btn-text" onClick={sendMessage}>{t.send}</button>
                     </div>
                 </div>
             </div>

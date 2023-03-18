@@ -1,36 +1,38 @@
 import Image from "next/image";
+import { useRouter } from "next/router";
 import Img from '../assets/images/header.png';
+import UZ from '../public/locales/uz/common.json';
+import RU from '../public/locales/ru/common.json';
+import EN from '../public/locales/en/common.json';
 
 function Advantages() {
+
+    const router = useRouter();
+
+    // i18next
+
+    const t = router.locale == "uz" ? UZ : router.locale == "ru" ? RU : EN;
+
     return (
         <div className="Advantages parent">
             <Image src={Img} priority={true} alt="back" className="back-img" width={1500} height={1000} />
             <div className="wrapper">
-                <h1 className="title">Nega aynan “Kanzec“</h1>
+                <h1 className="title">{t.why_kanzec_name}</h1>
                 <div className="infos">
                     <div className="advantage">
-                        <h4 className="name">Собственное производство</h4>
-                        <p className="text">работа на прямую с фабрикой, а не с посредниками</p>
+                        <p className="text">{t.why_desc1}</p>
                     </div>
                     <div className="advantage">
-                        <h4 className="name">Конструктор чехлов</h4>
-                        <p className="text">возможность выбора любого сочетание цвета и модели чехла</p>
+                        <p className="text">{t.why_desc2}</p>
                     </div>
                     <div className="advantage">
-                        <h4 className="name">Собственный шоу-рум</h4>
-                        <p className="text">в наличии большой ассортимент готовых чехлов, меховых накидок и аксессуаров</p>
+                        <p className="text">{t.why_desc3}</p>
                     </div>
                     <div className="advantage">
-                        <h4 className="name">Профессиональная установка</h4>
-                        <p className="text">специализированные установочные центры + выезд мастера</p>
+                        <p className="text">{t.why_desc4}</p>
                     </div>
                     <div className="advantage">
-                        <h4 className="name">Авто-ателье</h4>
-                        <p className="text">перетянем любой элемент салона авто в кожу (большой выбор материала)</p>
-                    </div>
-                    <div className="advantage">
-                        <h4 className="name">Гарантия</h4>
-                        <p className="text">перетянем любой элемент салона авто в кожу (большой выбор материала)</p>
+                        <p className="text">{t.why_desc5}</p>
                     </div>
                 </div>
             </div>

@@ -1,107 +1,63 @@
 import Link from "next/link";
 import Image from "next/image";
-import Logo from '../assets/images/logo.png';
-import { Telegram, WhatsApp, YouTube } from "@mui/icons-material";
+import { useRouter } from "next/router";
+import Logo from '../assets/images/logo4.png';
+import UZ from '../public/locales/uz/common.json';
+import RU from '../public/locales/ru/common.json';
+import EN from '../public/locales/en/common.json';
+import { Instagram, Telegram, YouTube } from "@mui/icons-material";
 
 function Footer() {
+
+    const router = useRouter();
+
+    // i18next
+
+    const t = router.locale == "uz" ? UZ : router.locale == "ru" ? RU : EN;
+
     return (
         <div className="Footer parent">
             <div className="wrapper">
-                <div className="top-footer">
-                    <div className="left">
-                        <p className="text">Направления</p>
-                        <div className="links">
-                            <Link href="/" className="link footer-text">Программирование</Link>
-                            <Link href="/" className="link footer-text">Маркетинг</Link>
-                            <Link href="/" className="link footer-text">Управление</Link>
-                            <Link href="/" className="link footer-text">Психология</Link>
-                            <Link href="/" className="link footer-text">Маркетинг</Link>
-                            <Link href="/" className="link footer-text">Программирование</Link>
-                            <Link href="/" className="link footer-text">Психология</Link>
-                            <Link href="/" className="link footer-text">Маркетинг</Link>
-                            <Link href="/" className="link footer-text">Программирование</Link>
-                            <Link href="/" className="link footer-text">Управление</Link>
-                            <Link href="/" className="link footer-text">Маркетинг</Link>
-                            <Link href="/" className="link footer-text">Программирование</Link>
-                        </div>
+                <div className="socials">
+                    <div className="logo">
+                        <Image src={Logo} priority={true} alt="logo" className="img" />
+                        <h3 className="title">{t.slogan}</h3>
                     </div>
-                    <div className="right">
-                        <div className="texts">
-                            <div>
-                                <p className="text">О Skillbox</p>
-                                <Link href="/" className="link footer-text">Программирование</Link>
-                                <Link href="/" className="link footer-text">Маркетинг</Link>
-                                <Link href="/" className="link footer-text">Управление</Link>
-                                <Link href="/" className="link footer-text">Психология</Link>
-                                <Link href="/" className="link footer-text">Маркетинг</Link>
-                                <Link href="/" className="link footer-text">Программирование</Link>
-                                <Link href="/" className="link footer-text">Психология</Link>
-                            </div>
-                            <div>
-                                <p className="text">Проекты</p>
-                                <Link href="/" className="link footer-text">Психология</Link>
-                                <Link href="/" className="link footer-text">Маркетинг</Link>
-                                <Link href="/" className="link footer-text">Программирование</Link>
-                                <Link href="/" className="link footer-text">Психология</Link>
-                            </div>
-                            <div>
-                                <p className="text">Сотрудничество</p>
-                                <Link href="/" className="link footer-text">Программирование</Link>
-                                <Link href="/" className="link footer-text">Маркетинг</Link>
-                                <Link href="/" className="link footer-text">Управление</Link>
-                                <Link href="/" className="link footer-text">Психология</Link>
-                                <Link href="/" className="link footer-text">Маркетинг</Link>
-                                <Link href="/" className="link footer-text">Программирование</Link>
-                                <Link href="/" className="link footer-text">Психология</Link>
-                            </div>
-                        </div>
+                    <p className="text">{t.footer1}:</p>
+                    <div className="icons">
+                        <a href="https://t.me/kanzec" target="_blank" rel="noreferrer" className="icon">
+                            <Telegram className="ic" />
+                        </a>
+                        <a href="https://www.instagram.com/kanzec.uz/" target="_blank" rel="noreferrer" className="icon">
+                            <Instagram className="ic" />
+                        </a>
+                        <a href="https://www.youtube.com/@kanzecuz7345/videos" target="_blank" rel="noreferrer" className="icon">
+                            <YouTube className="ic" />
+                        </a>
+                        <a href="tel:+998903187480" className="tel-btn text">+99890 318 74 80</a>
                     </div>
                 </div>
-                <div className="middle-footer">
-                    <div className="left">
-                        <div>
-                            <a href="tel:8 (800) 500-05-22" className="text">8 (800) 500-05-22</a>
-                            <Link href="/" className="link footer-text">Контактный центр</Link>
-                        </div>
-                        <div>
-                            <a href="tel:8 (800) 500-05-22" className="text">+7 499 444 90 36</a>
-                            <Link href="/" className="link footer-text">Отдел заботы о пользователях</Link>
-                        </div>
+                <div className="card-links">
+                    <div className="tool">
+                        <div className="name">{t.footer2}</div>
+                        <Link href="/" className="text">{t.footer3}</Link>
+                        <Link href="/" className="text">{t.footer4}</Link>
+                        <Link href="/" className="text">{t.footer5}</Link>
                     </div>
-                    <div className="right">
-                        <div className="top">
-                            <a href="#" className="footer-text">г. Москва, Ленинский проспект, дом 6, строение 20</a>
-                            <div className="icons">
-                                <a href="#">
-                                    <WhatsApp className="icon" />
-                                </a>
-                                <a href="#">
-                                    <Telegram className="icon" />
-                                </a>
-                                <a href="#">
-                                    <YouTube className="icon" />
-                                </a>
-                            </div>
-                        </div>
-                        <a href="mailto:hello@skillbox.ru" className="footer-text">hello@skillbox.ru</a>
+                    <div className="tool">
+                        <div className="name">{t.footer6}</div>
+                        <Link href="/" className="text">{t.footer7}</Link>
+                        <Link href="/" className="text">{t.footer8}</Link>
+                        <Link href="/" className="text">{t.footer9}</Link>
+                        <Link href="/" className="text">{t.footer10}</Link>
                     </div>
                 </div>
-                <div className="bottom-footer">
-                    <div className="links">
-                        <Link href="/" className="footer-text link">Оферта</Link>
-                        <Link href="/" className="footer-text link">Оплата</Link>
-                        <Link href="/" className="footer-text link">Правила пользования Платформой</Link>
-                        <Link href="/" className="footer-text link">Политика конфиденциальности</Link>
-                    </div>
-                    <div className="texts">
-                        <p className="footer-text">Мы используем файлы cookie, для персонализации сервисов и повышения удобства пользования сайтом. Если вы не согласны на их использование, поменяйте настройки браузера.</p>
-                    </div>
-                    <div className="footer-text">© Skillbox, 2023</div>
-                    <div className="texts">
-                        <p className="footer-text">Премии Рунета 2018, 2019, 2020, 2021</p>
-                        <p className="footer-text">Участник Skolkovo</p>
-                    </div>
-                </div>
+            </div>
+            <div className="copyriting">
+                <p className="text">{t.foot13} © Kanzec | {t.foot14}</p>
+                <a href="https://www.instagram.com/abba.uz/" target="_blank" rel="noreferrer" className="text">abba marketing</a>
+                <p className="text">- {t.foot15}</p>
+                <a href="https://www.instagram.com/abba.uz/" target="_blank" rel="noreferrer" className="text">ABBA</a>
             </div>
         </div>
     )
