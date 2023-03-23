@@ -32,24 +32,6 @@ function About() {
                     </div>
                     <div className="texts">
                         <p className="text">{t.about_text2}</p>
-                        <div className="cards">
-                            <div className="info">
-                                <h3 className='name'>14 yillik tajriba</h3>
-                                <p className='footer-text'>m Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy</p>
-                            </div>
-                            <div className="info">
-                                <h3 className='name'>14 yillik tajriba</h3>
-                                <p className='footer-text'>m Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy</p>
-                            </div>
-                            <div className="info">
-                                <h3 className='name'>14 yillik tajriba</h3>
-                                <p className='footer-text'>m Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy</p>
-                            </div>
-                            <div className="info">
-                                <h3 className='name'>14 yillik tajriba</h3>
-                                <p className='footer-text'>m Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy</p>
-                            </div>
-                        </div>
                         <Image src={Img} priority alt="image" className="img" width={1000} height={500} />
                     </div>
                 </div>

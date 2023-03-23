@@ -247,7 +247,7 @@ $syncopate: 'Syncopate', sans-serif;
 
     .bottom-navbar {
         gap: 1vw;
-        width: 70%;
+        width: 66%;
         display: flex;
         margin-top: 1vw;
         padding: 0.5vw 1vw;
@@ -397,8 +397,6 @@ $syncopate: 'Syncopate', sans-serif;
             cursor: pointer;
             padding: 0 1.5vw;
             align-items: center;
-            border: solid 1px transparent;
-            border-right-color: rgba(255, 255, 255, 0.452);
 
             @media (max-width:767px) {
                 border: none;
@@ -412,6 +410,20 @@ $syncopate: 'Syncopate', sans-serif;
                     font-size: 6vw;
                     margin-top: -5px;
                 }
+            }
+        }
+
+        .line {
+            width: 1px;
+            height: 1.5vw;
+            background-color: rgba(255, 255, 255, 0.452);
+
+            @media (max-width:1000px) {
+                height: 2.5vw;
+            }
+
+            @media (max-width:767px) {
+                display: none;
             }
         }
 

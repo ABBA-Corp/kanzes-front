@@ -19,10 +19,6 @@ $background: #0F1521;
         min-height: 500px;
     }
 
-    @media (max-width:450px) {
-        min-height: 480px;
-    }
-
     .wrapper {
         display: flex;
         padding-right: 35%;

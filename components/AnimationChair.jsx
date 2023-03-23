@@ -20,7 +20,7 @@ function AnimationChair() {
     const t = router.locale == "uz" ? UZ : router.locale == "ru" ? RU : EN;
 
     return (
-        <div className="AnimationChair parent">
+        <div className="AnimationChair parent" id='chair'>
             <div className="wrapper">
                 <div className="cards">
                     <div className={`info ${activeIndex == 1 && "active line"} ${activeIndex == 0 && "active"}`}>

@@ -102,7 +102,7 @@ $background: #242E41;
                             overflow: hidden;
                             display: -webkit-box;
                             -webkit-box-orient: vertical;
-                            -webkit-line-clamp: 3;
+                            -webkit-line-clamp: 1;
 
                             @media (max-width:767px) {
                                 margin-top: 2vw;
@@ -314,7 +314,6 @@ $background: #242E41;
 
             @media (max-width:767px) {
                 margin-top: 5vw;
-                flex-direction: column;
             }
 
             .explore {
@@ -323,7 +322,6 @@ $background: #242E41;
 
                 @media (max-width:767px) {
                     margin-left: 3vw;
-                    margin-bottom: 3vw;
                 }
 
                 &::before {
@@ -426,7 +424,7 @@ $background: #242E41;
                 margin-left: 3vw;
 
                 @media (max-width:767px) {
-                    margin-left: 2vw;
+                    margin-left: 4vw;
                 }
             }
         }

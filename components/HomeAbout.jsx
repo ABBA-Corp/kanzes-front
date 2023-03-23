@@ -28,7 +28,7 @@ function HomeAbout() {
                         <h1 className="title">{t.about}</h1>
                         <p className="text">{t.about_text2}</p>
                         <div className="buttons">
-                            <Link href="/about" className="explore text">{t.about_more}</Link>
+                            <Link href="/about" className="explore text">{t.more}</Link>
                             <div className="explore text" onClick={() => setShowVideo(true)}>{t.about_video} <PlayArrow className="icon" /></div>
                             <a href="https://t.me/kanzec" target="_blank" rel="noreferrer" className="explore social text"><Telegram /></a>
                             <a href="https://www.instagram.com/kanzec.uz/" target="_blank" rel="noreferrer" className="explore social text"><Instagram /></a>

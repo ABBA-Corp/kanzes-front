@@ -21,8 +21,8 @@ function Header() {
                 <h1 className="title">{t.head_name}</h1>
                 <p className="text">{t.header}</p>
                 <div className="buttons">
-                    <Link href="/" className="explore btn-text">{t.more}</Link>
-                    <Link href="/" className="explore btn-text">{t.katalog}</Link>
+                    <Link href="#chair" className="explore btn-text">{t.more}</Link>
+                    <Link href="#sort" className="explore btn-text">{t.katalog}</Link>
                 </div>
             </div>
             <div className="gradient"></div>

@@ -187,7 +187,7 @@ function Products() {
                                 <div className="color" style={{ backgroundColor: `${item.color3}` }}></div>
                                 <div className="color" style={{ backgroundColor: `${item.color4}` }}></div>
                             </div>
-                            <div className="text">{t.price}: <h3 className="name">{item.price} {t.valuta}</h3></div>
+                            <div className="text">{t.price}: <h3 className="name">{item.price * countNum} {t.valuta}</h3></div>
                             <div className="buy">
                                 <h3 className="name">{t.product}</h3>
                                 <div className="btns">

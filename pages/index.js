@@ -27,7 +27,7 @@ export default function Home(props) {
 
   function changeModal() {
     setShowModal(!showModal)
-  }
+  };
 
   return (
     <>

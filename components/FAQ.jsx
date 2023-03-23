@@ -41,16 +41,16 @@ function FAQ() {
     }
 
     return (
-        <div className="FAQ parent">
+        <div className="FAQ parent" id="faq">
             <div className="wrapper">
                 <h1 className="title">{t.faq}</h1>
-                {dataFAQ.map((item) => (
+                {dataFAQ?.map((item) => (
                     <div key={item.id} className="bar">
                         <div className="question">
                             <h4 className="name">{router.locale == "uz" ? item.question_uz : router.locale == "ru" ? item.question_ru : item.question_en}</h4>
-                            <AddRounded onClick={() => activeIndex != dataFAQ.indexOf(item) ? setActiveIndex(dataFAQ.indexOf(item)) : setActiveIndex(null)} className={`icon ${activeIndex == dataFAQ.indexOf(item) && "active-icon"}`} />
+                            <AddRounded onClick={() => activeIndex != dataFAQ?.indexOf(item) ? setActiveIndex(dataFAQ?.indexOf(item)) : setActiveIndex(null)} className={`icon ${activeIndex == dataFAQ?.indexOf(item) && "active-icon"}`} />
                         </div>
-                        <div className={`answer ${activeIndex == dataFAQ.indexOf(item) && "active-answer"}`}>
+                        <div className={`answer ${activeIndex == dataFAQ?.indexOf(item) && "active-answer"}`}>
                             <p className="text">{router.locale == "uz" ? item.answer_uz : router.locale == "ru" ? item.answer_ru : item.answer_en}</p>
                         </div>
                     </div>

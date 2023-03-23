@@ -70,11 +70,15 @@ const Navbar = () => {
             <nav className="bottom-navbar">
                 <div className="catalog-btn sub-title" onClick={() => setShowCatalog(true)}><SortRounded className="list-icon" /> Catalog</div>
                 <div className={`catalogs ${showCatalog && "show-catalog"}`}>
-                    <div className="drop sub-title">Avto cases</div>
-                    <div className="drop sub-title">Aksesuvar</div>
-                    <div className="drop sub-title">Issiq chexol</div>
-                    <div className="drop sub-title">Kovriklar</div>
-                    <div className="drop sub-title" style={{ border: "none" }}>MAxsus chexol</div>
+                    <Link href="/products/10" scroll={false} className="drop sub-title">{t.nav_bot1}</Link>
+                    <div className="line"></div>
+                    <Link href="/products/14" scroll={false} className="drop sub-title">{t.nav_bot2}</Link>
+                    <div className="line"></div>
+                    <Link href="/products/15" scroll={false} className="drop sub-title">{t.nav_bot3}</Link>
+                    <div className="line"></div>
+                    <Link href="/#faq" scroll={false} className="drop sub-title">{t.nav_bot4}</Link>
+                    <div className="line"></div>
+                    <Link href="/services" scroll={false} className="drop sub-title" style={{ border: "none" }}>{t.nav_bot5}</Link>
                     <Close className="close-icon" onClick={() => setShowCatalog(false)} />
                 </div>
                 <div className="tool-icons">

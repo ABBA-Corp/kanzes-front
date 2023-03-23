@@ -93,7 +93,7 @@ function HomeNews() {
                 </Slider>
                 <div className="bottom">
                     <Link href="/allnews" className="explore btn-text">{t.all}</Link>
-                    <p className="text">специализированные установочные центры + выезд мастераспециализированные установочные центры + выезд мастераспециализированные</p>
+                    <p className="text">{t.news_desc}</p>
                 </div>
             </div>
         </div>
