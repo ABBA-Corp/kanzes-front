@@ -62,7 +62,7 @@ function Services() {
             </div>
             {pointImg != "" &&
                 <div className="modal-image">
-                    <Image src={pointImg ? pointImg : ""} priority alt="image" className="img" width={1000} height={500} />
+                    <Image  loader={() => `${pointImg ? pointImg : ""}?w=1500&q=1000`} src={pointImg ? pointImg : ""} priority alt="image" className="img" width={1000} height={500} />
                     <div className="contrast" onClick={() => setPointImg("")}></div>
                     <CloseRounded className="close-icon" onClick={() => setPointImg("")} />
                 </div>

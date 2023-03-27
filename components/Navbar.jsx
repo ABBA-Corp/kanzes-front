@@ -78,7 +78,7 @@ const Navbar = () => {
                     <div className="line"></div>
                     <Link href="/#faq" scroll={false} className="drop sub-title">{t.nav_bot4}</Link>
                     <div className="line"></div>
-                    <Link href="/services" scroll={false} className="drop sub-title" style={{ border: "none" }}>{t.nav_bot5}</Link>
+                    <Link href="/#serv" scroll={false} className="drop sub-title" style={{ border: "none" }}>{t.nav_bot5}</Link>
                     <Close className="close-icon" onClick={() => setShowCatalog(false)} />
                 </div>
                 <div className="tool-icons">

@@ -4,8 +4,8 @@ import Slider from "react-slick";
 import { useQuery } from "react-query";
 import { useRouter } from 'next/router';
 import { Skeleton } from "@mui/material";
-import { fetchProductsApi } from "@/pages/api/Api";
 import { useEffect, useState } from "react";
+import { fetchProductsApi } from "@/pages/api/Api";
 
 function SliderProducts() {
 
@@ -72,19 +72,19 @@ function SliderProducts() {
                 {data?.data.map((item) => (
                     <Link key={item.id} href={`/products/${item.id}`} className="product" style={{ marginLeft: `${-scrollValue}px` }}>
                         <Image loader={() => `${item.image ? item.image : ""}?w=1500&q=1000`} src={item.image ? item.image : ""} priority alt="image" className="img" width={1000} height={500} />
-                        <h3 className="sub-title">{router.locale == "uz" ? item.title_uz : router.locale == "ru" ? item.title_ru : item.title_en}</h3>
+                        <h3 className="sub-title">{router.locale == "uz" ? item.name_uz : router.locale == "ru" ? item.name_ru : item.name_en}</h3>
                     </Link>
                 ))}
                 {data?.data.map((item) => (
                     <Link key={item.id} href={`/products/${item.id}`} className="product">
                         <Image loader={() => `${item.image ? item.image : ""}?w=1500&q=1000`} src={item.image ? item.image : ""} priority alt="image" className="img" width={1000} height={500} />
-                        <h3 className="sub-title">{router.locale == "uz" ? item.title_uz : router.locale == "ru" ? item.title_ru : item.title_en}</h3>
+                        <h3 className="sub-title">{router.locale == "uz" ? item.name_uz : router.locale == "ru" ? item.name_ru : item.name_en}</h3>
                     </Link>
                 ))}
                 {data?.data.map((item) => (
                     <Link key={item.id} href={`/products/${item.id}`} className="product">
                         <Image loader={() => `${item.image ? item.image : ""}?w=1500&q=1000`} src={item.image ? item.image : ""} priority alt="image" className="img" width={1000} height={500} />
-                        <h3 className="sub-title">{router.locale == "uz" ? item.title_uz : router.locale == "ru" ? item.title_ru : item.title_en}</h3>
+                        <h3 className="sub-title">{router.locale == "uz" ? item.name_uz : router.locale == "ru" ? item.name_ru : item.name_en}</h3>
                     </Link>
                 ))}
             </div>
