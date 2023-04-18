@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useState } from "react";
 import Searching from "./Searching";
 import { useRouter } from "next/router";
-import Logo from '../assets/images/logo.png';
+import Logo from '../assets/images/logo4.png';
 import UZ from '../public/locales/uz/common.json';
 import RU from '../public/locales/ru/common.json';
 import EN from '../public/locales/en/common.json';
