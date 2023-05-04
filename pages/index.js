@@ -42,7 +42,7 @@ export default function Home(props) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className='Home'>
-        <Header />
+        <Header /> 
         <SliderProducts />
         <TopProducts />
         <SortProducts />
