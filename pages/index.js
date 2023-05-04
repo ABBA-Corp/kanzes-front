@@ -46,7 +46,7 @@ export default function Home(props) {
         <SliderProducts />
         <TopProducts />
         <SortProducts />
-        <AnimationChair />
+        <AnimationChair /> 
         <Advantages />
         <HomeServices />
         <HomeNews />
