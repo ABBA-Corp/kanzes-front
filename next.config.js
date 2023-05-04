@@ -9,7 +9,7 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'api.notka.uz',
+        hostname: 'kanzec.com',
         port: '3000',
         pathname: '/account123/**',
       },
